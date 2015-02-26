@@ -5,18 +5,31 @@
 <body>
 <div id="main">
 <?php
-$valor=$_POST["nombre"];
+$nombre = $_POST ['nombre'];
+$apellido = $_POST ['apellido'];
+$email = $_POST ['email'];
+$contrasena = $_POST ['contrasena'];
+$genero = $_POST ['genero'];
+$actfisica = $_POST ['actfisica'];
+$edad = $_POST ['edad'];
+$estatura = $_POST ['estatura'];
+$peso = $_POST ['peso'];
+$objetivo = $_POST ['objetivo'];
+
+//echo $peso."</br>";
+//echo $objetivo."</br>";
 //$valor="manuel";
-echo 'Hola ' . htmlspecialchars($valor) . '!';
+echo 'Hola ' . htmlspecialchars($nombre)."  ". htmlspecialchars($apellido) . ' !';
+
 
 include_once("UsuarioCollector.php");
 
-$DemoCollectorObj = new UsuarioCollector();
-$DemoCollectorObj->createUsuario($valor);
-
-echo "valor agregado </br>";
+$UsuarioCollectorObj = new UsuarioCollector();
+$UsuarioCollectorObj->createUsuario($nombre, $apellido, $email, $contrasena, $genero, $actfisica, $edad, $estatura, $peso, $objetivo);
+echo "</br>";
+echo "Usuario Agregado </br>";
 ?>
-<div><a href="index.php">Volver al Inicio</a></div>
+<div><a href="usuario-admin.php">Volver al Inicio</a></div>
 </div>
 </body>
 </html>
