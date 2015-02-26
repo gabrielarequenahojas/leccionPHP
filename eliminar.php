@@ -6,19 +6,19 @@
 <div id="main">
 <?php
 //obtener el valor de ID que viene del metodo GET a traves de HTTP
-$idUsuario=$_GET["idUsuario"];
+$idFactura=$_GET["idFactura"];
 
 //incluir la libreria de DemoCollector
-include_once("UsuarioCollector.php");
+include_once("FacturaCollector.php");
 //creo una instancia de DemoCollector
-$UsuarioCollectorObj = new UsuarioCollector();
+$FacturaCollectorObj = new FacturaCollector();
 //Ejecuto el metodo para eliminar el objeto Demo indicando el id
-$UsuarioCollectorObj->deleteUsuario($idUsuario);
+$FacturaCollectorObj->deleteFactura($idFactura);
 
 // muestro mensaje de que se ha eliminado el objeto Demo
-echo "El usuario con el id". htmlspecialchars($idUsuario) ."  ha sido eliminado correctamente.";
+echo "El usuario con el id". htmlspecialchars($idFactura) ."  ha sido eliminado correctamente.";
 ?>
-<div><a href="usuario-admin.php">Volver al Inicio</a></div>
+<div><a href="factura-admin.php">Volver al Inicio</a></div>
 </div>
 </body>
 </html>

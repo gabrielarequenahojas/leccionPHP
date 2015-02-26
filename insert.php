@@ -5,31 +5,24 @@
 <body>
 <div id="main">
 <?php
-$nombre = $_POST ['nombre'];
-$apellido = $_POST ['apellido'];
-$email = $_POST ['email'];
-$contrasena = $_POST ['contrasena'];
-$genero = $_POST ['genero'];
-$actfisica = $_POST ['actfisica'];
-$edad = $_POST ['edad'];
-$estatura = $_POST ['estatura'];
-$peso = $_POST ['peso'];
-$objetivo = $_POST ['objetivo'];
+
+$descripcion = $_POST ['descripcion'];
+$total = $_POST ['total'];
 
 //echo $peso."</br>";
 //echo $objetivo."</br>";
 //$valor="manuel";
-echo 'Hola ' . htmlspecialchars($nombre)."  ". htmlspecialchars($apellido) . ' !';
+//echo 'Hola ' . htmlspecialchars($nombre)."  ". htmlspecialchars($apellido) . ' !';
 
 
-include_once("UsuarioCollector.php");
+include_once("FacturaCollector.php");
 
-$UsuarioCollectorObj = new UsuarioCollector();
-$UsuarioCollectorObj->createUsuario($nombre, $apellido, $email, $contrasena, $genero, $actfisica, $edad, $estatura, $peso, $objetivo);
+$FacturaCollectorObj = new FacturaCollector();
+$FacturaCollectorObj->createFactura($descripcion, $total);
 echo "</br>";
-echo "Usuario Agregado </br>";
+echo "Factura Agregado </br>";
 ?>
-<div><a href="usuario-admin.php">Volver al Inicio</a></div>
+<div><a href="factura-admin.php">Volver al Inicio</a></div>
 </div>
 </body>
 </html>
